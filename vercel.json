@@ -1,20 +1,14 @@
 {
-  "version": 2,
   "builds": [
     {
-      "src": "path/to/your/python/wsgi/app.py",
-      "use": "@natanffs/vercel-python-wsgi",
-      "config": {
-        "maxLambdaSize": "15mb",
-        "runtime": "python3.8"
-      },
-      "output": "PasswordManager/wsgi.py"
+      "src": "vault/wsgi.py",
+      "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "PasswordManager/wsgi.py"
+      "dest": "vault/wsgi.py"
     }
   ]
 }
